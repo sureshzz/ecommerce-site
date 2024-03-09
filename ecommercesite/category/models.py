@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class Category(models.Model):
   category_name = models.CharField(max_length = 150)
-  slug = models.CharField(max_length = 150 , unique = True)
+  slug = models.SlugField(max_length = 150 , unique = True)
   description = models.CharField(max_length = 150, blank = True)
   car_image = models.ImageField(upload_to="photos/categories",blank =  True)
 
