@@ -1,6 +1,4 @@
-{% load static%}
-
-{% block content%}
+{% load static%} {% block content%}
 <header class="section-header">
   <nav class="navbar p-md-0 navbar-expand-sm navbar-light border-bottom">
     <div class="container">
@@ -62,30 +60,17 @@
               <i class="fa fa-bars"></i> All category
             </button>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="#"
-                >Machinery / Mechanical Parts / Tools
+              {% for category in links %}
+              <a class="dropdown-item" href="{{category.get_url}}"
+                >{{ category.category_name }}
               </a>
-              <a class="dropdown-item" href="#"
-                >Consumer Electronics / Home Appliances
-              </a>
-              <a class="dropdown-item" href="#">Auto / Transportation</a>
-              <a class="dropdown-item" href="#"
-                >Apparel / Textiles / Timepieces
-              </a>
-              <a class="dropdown-item" href="#"
-                >Home & Garden / Construction / Lights
-              </a>
-              <a class="dropdown-item" href="#"
-                >Beauty & Personal Care / Health
-              </a>
+              {% endfor %}
             </div>
           </div>
           <!-- category-wrap.// -->
         </div>
         <!-- col.// -->
-        <a href="/store" class="btn btn-outline-primary"
-          >Store</a
-        >
+        <a href="/store" class="btn btn-outline-primary">Store</a>
         <div class="col-lg col-md-6 col-sm-12 col">
           <form action="#" class="search">
             <div class="input-group w-100">
