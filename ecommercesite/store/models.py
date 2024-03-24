@@ -25,7 +25,7 @@ class Product(models.Model):
   
   
 variation_category_choice = (
-  ('choice','choice'),
+  ('color','color'),
   ('size','size'),
 )
   
@@ -36,5 +36,5 @@ class Variation(models.Model):
   is_active = models.BooleanField(default = True)
   created_date = models.DateTimeField(auto_now = True)
   
-  def __str__(self):
+  def __unicode__(self):
     return self.product 
